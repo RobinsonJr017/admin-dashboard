@@ -15,6 +15,7 @@
     --primary-color-light: #3A3B3C;
     --toggle-color: #FFF;
     --text-color: #CCC;
+    --icons-color:
 
     /* ==== Transition ==== */
     --tran-02: all 0.4s ease;
@@ -33,9 +34,11 @@ body.dark{
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
+    --primary-color-light: #f5feff;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --icon-color: #FFF;
+    --icons-color: #695CFE;
 }
 /* ==== Resuable CSS ====*/
 
@@ -340,3 +343,268 @@ body.dark .sidebar .icon img {
     display: none; /* Opcionalmente oculta el texto */
 }
 
+/* Barra de navegacion */
+/* Estilos para la barra horizontal */
+/* Estilo para la barra de navegación horizontal */
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 270px; /* Ajuste automático basado en el estado de la barra lateral */
+    width: calc(100% - 270px); /* Ajuste automático basado en el estado de la barra lateral */
+    height: 90px;
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    transition: var(--tran-05);
+    z-index: 99;
+}
+
+.sidebar.close ~ .topnav {
+    left: 88px; /* Ajustar basado en el ancho de la barra lateral cerrada */
+    width: calc(100% - 88px); /* Ajustar basado en el ancho de la barra lateral cerrada */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* input de buscar */
+.search-container input {
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    width: 80%; /* Ajusta según sea necesario */
+    transition: width 0.4s ease;
+}
+
+.search-container .search-btn,
+.profile-container .bx-bell {
+    background-color: var(--toggle-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Tamaño uniforme */
+    height: 40px; /* Tamaño uniforme */
+    margin-left: 5px;
+    margin-right: 5px; /* Para asegurar un espacio consistente */
+}
+
+.search-container .search-btn i,
+.profile-container .bx-bell {
+    font-size: 20px; /* Tamaño uniforme para los iconos */
+    color: #000000;
+}
+
+.search-container .search-btn {
+    background-color: var(--toggle-color);
+    border: none;
+    padding: 10 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.profile-container i {
+    font-size: 24px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.profile-container .profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container .profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 18px;
+    border: #18191A 2px solid;
+}
+
+.profile-container .profile .profile-name {
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 10px;
+}
+
+/**/
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--sidebar-color); /* Ajusta según sea necesario */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 90px; /* Espacio debajo de la barra superior */
+    margin-left: 270px;
+    z-index: 99;
+    transition: var(--tran-05);
+
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.profile-details img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: #18191A 2px solid;
+
+}
+.profile-details .greeting {
+    font-size: 14px;
+    color: #555555;
+}
+.profile-details .username {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.action-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 33px;
+}
+.action-buttons .btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons .btn:hover {
+    background-color: var(--text-color);
+}
+
+/* Estilos para la sección de proyectos */
+h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.titulo{
+    margin-left: 250px;
+}
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 265px;
+    color: var(--text-color);
+    width: 70%;
+    gap: 20px;
+    justify-content: space-between;
+    
+}
+.project{
+    background-color: var(--sidebar-color);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px); /* Toma 50% del ancho menos el gap */
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho total */
+    margin-bottom: 20px;
+}
+
+#your-projects {
+    padding: 20px;
+}
+
+/**/
+/* Contenedor principal con dos columnas: proyectos y anuncios/tendencias */
+.main-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Ajusta el ancho de las columnas según tus necesidades */
+}
+
+/* Contenedor para los proyectos, con múltiples columnas si es necesario */
+.contenedor {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para los proyectos */
+    gap: 20px;
+}
+
+/* Contenedor para las secciones de anuncios y tendencias */
+.contenedor-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre anuncios y tendencias */
+    margin-right: 90px;
+    color: var(--text-color);
+}
+
+.project, .project1 {
+    background-color: var(--sidebar-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+.project{
+    box-shadow: -4px 0 7px -2px #695CFE;
+
+}
+
+/* P y H de anuncios*/
+.project1 > p{
+    margin-bottom: 25px;
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    padding-left: 15px;
+    margin-right: 15px;
+}
+.project1 > h4{
+    font-size: 14px;
+    padding-left: 15px;
+    margin-right: 15px;
+}
+
+/*iconos de cada contenedor*/
+.project .cont {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px; /* Espacio entre los iconos, puedes ajustarlo según prefieras */
+}
+
+.project .cont img {
+    width: 24px;
+    height: 24px;
+    background-color: var(--toggle-color);
+    border-radius: 100px;
+}
