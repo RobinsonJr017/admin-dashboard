@@ -34,7 +34,7 @@ body.dark{
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
-    --primary-color-light: #f5feff;
+    --primary-color-light: #e3f0f1;
     --toggle-color: #DDD;
     --text-color: #707070;
     --icon-color: #FFF;
@@ -511,7 +511,7 @@ body.dark .sidebar .icon img {
 /* Estilos para la sección de proyectos */
 h2 {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     color: var(--text-color);
 }
 .titulo{
@@ -582,9 +582,9 @@ h2 {
 /* P y H de anuncios*/
 .project1 > p{
     margin-bottom: 25px;
-    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 0px rgba(105, 92, 254, 0.3);
     font-size: 13px;
-    padding-left: 15px;
+    padding-left: 15px; 
     margin-right: 15px;
 }
 .project1 > h4{
@@ -606,5 +606,34 @@ h2 {
     width: 24px;
     height: 24px;
     background-color: var(--toggle-color);
-    border-radius: 100px;
+    border-radius: 50%;
+}
+
+/* Imagenes de la seccion de Anuncios (trading) */
+#trending .project1 .project-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px; /* Espacio entre cada proyecto */
+    margin-left: 13px;
+    margin-top: 19px;
+}
+
+#trending .project1 .project-item img {
+    width: 60px;
+    height: 60px;
+    margin-right: 19px;
+    border: #000000 2px solid; /* Espacio entre la imagen y el texto */
+    border-radius: 50%;
+}
+
+/* Contenedor de texto (nombre de usuario y descripción) */
+#trending .project1 .project-item .text-container {
+    display: flex;
+    flex-direction: column; /* Alinea el texto verticalmente */
+}
+
+#trending .project1 .project-item p {
+    margin: 0; 
+    box-shadow: 0 4px 0px rgba(105, 92, 254, 0.3);
+
 }
